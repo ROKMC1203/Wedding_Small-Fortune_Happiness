@@ -129,6 +129,7 @@
       font-size: 15px;
       color: #555555;
       min-height: 20px;
+      white-space: pre-line;
     }
 
     #message.success {
@@ -257,7 +258,7 @@
           return;
         }
 
-        setMessage("등록되었습니다.", "success");
+        setMessage("제출되었습니다.\n감사합니다.", "success");
         document.getElementById("friendSelect").value = "";
         document.getElementById("nameInput").value = "";
       } catch (e) {
