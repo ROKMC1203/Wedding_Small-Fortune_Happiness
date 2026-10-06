@@ -5,7 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>김태현♥윤혜주 결혼 이벤트</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg: #fdf3ee;
+      --card: #fffaf6;
+      --ink: #5a4640;
+      --ink-soft: #8a7068;
+      --accent: #e8a0a0;
+      --accent-dark: #d98686;
+      --line: #f0d8d0;
+      --error: #c0594f;
+      --success: #5e8f6a;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -16,116 +32,121 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #f4f6f8;
-      font-family: Arial, "Noto Sans KR", sans-serif;
+      padding: 24px 0;
+      background: var(--bg);
+      font-family: "Gowun Dodum", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      color: var(--ink);
     }
 
     .card {
-      width: min(90%, 520px);
-      padding: 48px 36px;
-      background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
-    }
-
-    .subtitle {
-      margin: 0 0 28px;
+      width: min(92%, 520px);
+      padding: 48px 32px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 12px 32px rgba(190, 130, 120, 0.15);
       text-align: center;
-      font-size: 14px;
-      font-weight: 700;
-      color: #555555;
-    }
-
-    h1 {
-      margin: 0 0 28px;
-      text-align: center;
-      font-size: 40px;
-      color: #222222;
     }
 
     .intro {
-      margin: 0 0 24px;
-      font-size: 15px;
-      line-height: 1.6;
-      color: #333333;
-      text-align: center;
-    }
-
-    .box-title {
       margin: 0 0 8px;
-      font-size: 15px;
-      font-weight: 700;
-      color: #222222;
+      font-size: 16px;
+      line-height: 1.9;
     }
 
-    .gift-box,
-    .howto {
-      margin-bottom: 24px;
-      font-size: 14px;
-      color: #444444;
-    }
-
-    .gift-box ol,
-    .howto ol {
+    .section {
       margin: 0;
-      padding-left: 20px;
-      line-height: 1.8;
+      font-size: 15px;
+      line-height: 1.9;
     }
 
-    .note {
-      margin: 8px 0 0;
-      font-size: 13px;
-      color: #c0392b;
+    .section-title {
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .divider {
+      margin: 22px 0;
+      font-size: 15px;
+      letter-spacing: 2px;
+      color: var(--accent);
+      user-select: none;
+    }
+
+    .period {
+      color: var(--ink);
+      letter-spacing: 0.5px;
+    }
+
+    .gift-list,
+    .step-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .outro {
+      margin: 0 0 28px;
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--ink-soft);
     }
 
     .field {
-      margin-bottom: 22px;
+      margin-bottom: 20px;
+      text-align: left;
     }
 
     label {
       display: block;
       margin-bottom: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #333333;
+      font-size: 15px;
+      color: var(--ink);
     }
 
     select,
     input {
       width: 100%;
       height: 48px;
-      padding: 0 14px;
-      border: 1px solid #cccccc;
-      border-radius: 10px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      font-family: inherit;
       font-size: 16px;
+      color: var(--ink);
       background: #ffffff;
     }
 
     select:focus,
     input:focus {
       outline: none;
-      border-color: #555555;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(232, 160, 160, 0.25);
     }
 
     button {
       width: 100%;
-      height: 50px;
+      height: 52px;
       margin-top: 8px;
       border: none;
-      border-radius: 10px;
-      background: #222222;
+      border-radius: 14px;
+      background: var(--accent);
       color: #ffffff;
+      font-family: inherit;
       font-size: 17px;
       font-weight: 700;
       cursor: pointer;
+      transition: background 0.15s;
     }
 
     button:hover {
-      background: #444444;
+      background: var(--accent-dark);
     }
 
     button:disabled {
-      background: #999999;
+      background: #d9c5c0;
       cursor: not-allowed;
     }
 
@@ -133,50 +154,65 @@
       margin-top: 18px;
       text-align: center;
       font-size: 15px;
-      color: #555555;
+      color: var(--ink-soft);
       min-height: 20px;
       white-space: pre-line;
     }
 
     #message.success {
-      color: #1a7f37;
-      font-weight: 600;
+      color: var(--success);
+      font-weight: 700;
     }
 
     #message.error {
-      color: #c0392b;
-      font-weight: 600;
+      color: var(--error);
+      font-weight: 700;
     }
   </style>
 </head>
 
 <body>
   <main class="card">
-    <p class="subtitle">저희의 결혼식에 보내주신 관심 감사합니다.</p>
-
     <p class="intro">
-      감사의 마음을 담아 작은 이벤트를 준비했습니다.<br>
-      참여해주신 분들 중 추첨을 통해 아래와 같은 선물을 드립니다.
+      저희의 결혼을 축하해주셔서 감사합니다!<br>
+      감사한 마음을 담아 작은 이벤트를 준비했어요 ◡̈♡
+    </p>
+    <p class="intro">
+      참여해주신 분들 중 추첨을 통해<br>
+      작은 선물을 보내드립니다 ⸝⸝ᵕ ᵕ⸝⸝
     </p>
 
-    <div class="gift-box">
-      <p class="box-title">■ 선물</p>
-      <ol>
-        <li>상품권 5만원 - 1명</li>
-        <li>상품권 3만원 - 1명</li>
-        <li>상품권 1만원 - 2명</li>
-      </ol>
+    <div class="divider">˚₊‧꒰ა 이벤트 참여 기간 ໒꒱ ‧₊˚</div>
+    <p class="section period">2018. 01. 23 ~ 2027. 01. 23.</p>
+
+    <div class="divider">────୨ৎ────</div>
+
+    <div class="section">
+      <p class="section-title">♡ 선물</p>
+      <ul class="gift-list">
+        <li>₊˚⊹ 상품권 3만원 〰️ 1명</li>
+        <li>₊˚⊹ 상품권 2만원 〰️ 1명</li>
+        <li>₊˚⊹ 상품권 1만원 〰️ 1명</li>
+      </ul>
     </div>
 
-    <div class="howto">
-      <p class="box-title">■ 참여 방법</p>
-      <ol>
-        <li>'초대해주신 분' 선택</li>
-        <li>'본인 이름' 작성</li>
-        <li>'제출' 버튼 클릭</li>
-      </ol>
-      <p class="note">※정확한 이름이 식별되지 않으면 무효입니다.</p>
+    <div class="divider">────୨ৎ────</div>
+
+    <div class="section">
+      <p class="section-title">♡ 참여 방법</p>
+      <ul class="step-list">
+        <li>① 초대해주신 분을 선택해주세요.</li>
+        <li>② 본인 이름을 적어주세요.</li>
+        <li>③ 제출 버튼을 꾹 눌러주세요.</li>
+      </ul>
     </div>
+
+    <div class="divider">────୨ৎ────</div>
+
+    <p class="outro">
+      저희의 행복한 날을 함께해주셔서<br>
+      다시 한 번 진심으로 감사드립니다 ♡
+    </p>
 
     <div class="field">
       <label for="friendSelect">초대해주신 분</label>
